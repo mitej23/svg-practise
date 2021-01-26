@@ -3,7 +3,7 @@
 
 const start = document.getElementById("start");
 const end = document.getElementById("end");
-
+const divs = document.querySelectorAll(".dnd");
 //
 
 draggable1 = new PlainDraggable(end);
@@ -32,19 +32,17 @@ function dclick() {
   const arr = [];
   console.log("dclicked", evaluateDClick);
   if (evaluateDClick) {
-    start.addEventListener("click", (e) => {
-      start.style.backgroundColor = "red";
-      arr.push(e.target.id);
-    });
-    end.addEventListener("click", (e) => {
-      end.style.backgroundColor = "red";
-      arr.push(e.target.id);
-      if (arr.length === 2) {
-        st = document.getElementById(arr[0]);
-        en = document.getElementById(arr[1]);
-        console.log(st, en);
-        done();
-      }
+    divs.forEach((div) => {
+      div.addEventListener("click", (e) => {
+        div.style.backgroundColor = "red";
+        arr.push(e.target.id);
+        if (arr.length === 2) {
+          st = document.getElementById(arr[0]);
+          en = document.getElementById(arr[1]);
+          console.log(st, en);
+          done();
+        }
+      });
     });
   }
 }
