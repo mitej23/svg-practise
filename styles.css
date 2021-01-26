@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+#draggable {
+  padding: 200px;
+  height: 800px;
+  width: 800px;
+  background-color: aliceblue;
+}
+#start {
+  height: 100px;
+  width: 100px;
+  background-color: bisque;
+  position: relative;
+}
+
+#end {
+  height: 100px;
+  width: 100px;
+  background-color: rgb(88, 69, 45);
+  position: relative;
+  margin-top: 100px;
+  margin-left: 300px;
+}
